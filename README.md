@@ -18,16 +18,18 @@ docker rm -f blog-nuxt3
 docker rmi -f blog-nuxt3
 ```
 
-如果目录已存在则删除该目录
+### 第一次部署
 
-```shell
-rm -rf blog-nuxt3
-```
-
-同步代码
+拉取代码
 
 ``` shell
-git clone https://github.com/zhengyongxian/blog-nuxt3.git
+git clone https://github.com/xiaomang/blog-nuxt3.git
+```
+
+进入目录
+
+```shell
+cd blog-nuxt3
 ```
 
 创建镜像
