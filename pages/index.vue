@@ -1,33 +1,36 @@
 <template>
-    <div class="layout">
-        <header class="layout-header">
-            <nav class="navbar">
-                <nuxt-link class="navbar-logo" to="/">LOGO</nuxt-link>
-            </nav>
-        </header>
-        <main class="layout-main">
-            <main class="main">
-                <article class="article" v-for="i in 10" :key="i">
-                    <nuxt-link class="article-title" to="/about">生命自有其节奏，静候破土而出的光，写给暂时迷路的你</nuxt-link>
-                    <div class="article-summary">
-                        人生迷茫时，请记得：黑暗只是黎明的序章。你此刻的徘徊不是软弱，而是生命在积蓄力量。
-                        看看路边的小草，它不知明天是风雨还是阳光，却依然向上生长。每个人都有属于自己的时
-                        区，纽约比巴黎慢6小时，但时间从未出错。暂时找不到路时，不妨先做两件事：把今天过好，
-                        让身体动起来。晨跑时流下的汗水会冲散焦虑，深夜读的书页会照亮方向。要相信，那些让你
-                        辗转反侧的问题，终会在某个普通清晨豁然开朗——就像种子破土前，也看不见光的方向。
-                    </div>
-                </article>
-            </main>
-        </main>
-        <footer class="layout-footer">
-            <div class="footer">
-                <div class="copy">
-                    <span>&copy;</span>
-                    <span>2025</span>
-                    <nuxt-link to="/">LOGO</nuxt-link>
-                </div>
+    <div :class="$style.main">
+
+        <div :class="$style.entry" v-for="i in 10" :key="i">
+            <nuxt-link :class="$style.title" :to="`/posts/` + i">写给2025年继续奔跑的你</nuxt-link>
+            <div :class="$style.summary">
+                <p>
+                    亲爱的自己：
+                    当晨光第六万次亲吻你的窗棂，请记住这个数字——这是生命馈赠给你的第六万次重启机会。那些深夜修改的方案、晨起背诵的单词、健身房滴落的汗水，都在重塑着你的生命密度。
+                </p>
+                <p>
+                    关于自我价值
+                    你总说"我不够好"，却忘了比较的坐标系本就不该向外寻找。那些没能击垮你的否定，早已转化成你骨骼里的钛合金。2025年的你，比三年前多掌握两门技能，比五年前勇敢十倍，这就是最真实的成长进度条。
+                </p>
+                <p>
+                    关于行动哲学
+                    不要等待"完美时刻"，你捧着的这本人生之书，重要章节往往写在草稿纸上。今天背不下来的概念，就拆解成七个碎片时间；完不成的马拉松，先从系紧鞋带开始。记住：0.1的365次方是37.8，而1的365次方永远只是1。
+                </p>
+                <p>
+                    关于时间魔法
+                    把焦虑换算成具体数字：每天专注3小时，一年就是45个工作日。你去年种下的知识树苗，今年已结出意外果实。那些看似徒劳的坚持，像深海里的蓝鲸，正以你听不见的频率积蓄力量。
+                </p>
+                <p>
+                    当夜色再次降临，请对镜子里的战士说：
+                    "我允许自己休息，但永不放弃；我接受暂时失败，但拒绝定义。2026年的我，会感谢今天没有关掉闹钟的你。"
+                </p>
+                <p>
+                    —— 永远和你并肩作战的另一个你
+                    2025年盛夏
+                </p>
             </div>
-        </footer>
+        </div>
+
     </div>
 </template>
 
@@ -45,111 +48,33 @@ useSeoMeta({
 </script>
 
 
-<style lang="less" scoped>
-.layout {
-    display: flex;
-    flex-direction: column;
-    background-color: #f8f8f8;
-    min-height: 100vh;
-
-    .layout-header {
-        flex: 0 0 auto;
-
-        display: flex;
-        align-items: center;
-        justify-content: center;
-
-        height: 4rem;
-        border-bottom: 1px solid #d8d8d8;
-        background-color: #fff;
-        position: sticky;
-        top: 0;
-        left: 0;
-        right: 0;
-    }
-
-    .layout-main {
-        flex: 1 1 auto;
-
-        display: flex;
-        justify-content: center;
-    }
-
-    .layout-footer {
-        margin-top: 2rem;
-        flex: 0 0 auto;
-        display: flex;
-        justify-content: center;
-    }
-}
-
-.navbar {
-    width: 80rem;
-    max-width: 100%;
-    margin: 0 1rem;
-
-    &-logo {
-        display: inline-block;
-        color: #333;
-        text-decoration: none;
-        font-size: 1.25rem;
-    }
-
-}
-
+<style lang="less" module>
 .main {
     width: 40rem;
-    max-width: 100%;
-    border-radius: .25rem;
-    // box-shadow: 0 0 1rem rgba(0, 0, 0, .1);
-    padding: 1rem;
-    margin: 1rem 0;
-    box-sizing: border-box;
+    margin: 2rem auto;
 }
 
-.footer {
-    width: 40rem;
-    max-width: 100%;
-    min-height: 8rem;
-}
-
-.article {
-    margin: 2rem 0;
-    padding: 2rem;
+.entry {
+    // height: 10rem;
+    margin-top: 1rem;
     background-color: #fff;
-
-    &:first-child {
-        margin-top: 0;
-    }
-
-    &:last-child {
-        margin-bottom: 0;
-    }
-
-    &-title {
-        color: #404040;
-        text-decoration: none;
-        font-size: 1.25rem;
-        font-weight: 500;
-    }
-
-    &-summary {
-        margin-top: .5rem;
-        color: #666;
-        font-size: 0.875rem;
-        line-height: 1.5;
-    }
+    border-radius: 8px;
+    box-sizing: border-box;
+    padding: 1rem;
+    // box-shadow: 2px 2px 10px rgba(0, 0, 0, 0.1);
 }
 
-.copy {
-    color: #999;
-    margin: 0 1rem;
-    font-size: 0.875rem;
-    display: flex;
-    column-gap: .25rem;
+a.title {
+    color: #404040;
+    font-size: 1.125rem;
+    font-weight: bold;
+    text-decoration: none;
+}
 
-    a {
-        color: #999;
-    }
+.summary {
+    color: #666;
+    font-size: .875rem;
+    margin-top: .5rem;
+    line-height: 1.5;
 }
 </style>
